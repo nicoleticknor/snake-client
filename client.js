@@ -11,11 +11,11 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('connection established');
     conn.write('Name: NT')
-    setTimeout(() => {
-      setInterval(() => {
-        conn.write('Move: up');
-      }, 50);
-    }, 5);
+    // setTimeout(() => {
+    //   setInterval(() => {
+    //     conn.write('Move: up');
+    //   }, 50);
+    // }, 5);
     // setTimeout(() => {
     //   conn.write('Move: up');
     // }, 10);
