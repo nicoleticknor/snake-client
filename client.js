@@ -1,9 +1,10 @@
 const net = require('net');
+const { IP, PORT } = require('./constants');
 
 const connect = function () {
   const conn = net.createConnection({
-    host: '50.64.116.162',
-    port: 50541
+    host: IP,
+    port: PORT
   });
 
   conn.setEncoding('utf8');
@@ -11,23 +12,6 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('connection established');
     conn.write('Name: NT')
-    // setTimeout(() => {
-    //   setInterval(() => {
-    //     conn.write('Move: up');
-    //   }, 50);
-    // }, 5);
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    // }, 10);
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    // }, 15);
-    // setTimeout(() => {
-    //   conn.write('Move: up');
-    // }, 20);
-    // setInterval(() => {
-    //   conn.write('Move: up');
-    // }, 50);
   });
 
   conn.on('data', (datafromServer) => {
