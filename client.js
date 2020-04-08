@@ -11,6 +11,23 @@ const connect = function () {
   conn.on('connect', () => {
     console.log('connection established');
     conn.write('Name: NT')
+    setTimeout(() => {
+      setInterval(() => {
+        conn.write('Move: up');
+      }, 50);
+    }, 5);
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    // }, 10);
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    // }, 15);
+    // setTimeout(() => {
+    //   conn.write('Move: up');
+    // }, 20);
+    // setInterval(() => {
+    //   conn.write('Move: up');
+    // }, 50);
   });
 
   conn.on('data', (datafromServer) => {
